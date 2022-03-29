@@ -16,21 +16,29 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        password: {
-            type: DataTypes.STRING,
+        image: {
+            type: DataTypes.BLOB,
             allowNull: false,
-            validate: {
-                len: [4]
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "user",
+                key: "id"
             }
         },
+
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "user"
+        modelName: "post"
     }
 )
 
 
 
-module.exports = User;
+module.exports = Post;
