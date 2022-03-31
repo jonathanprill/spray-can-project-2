@@ -18,7 +18,7 @@ User.belongsToMany(Post, {
     foreignKey: "user_id"
 });
 
-Post.belongsToMany(User, {
+Post.belongsTo(User, {
     foreignKey: "user_id"
 });
 Post.belongsToMany(User, {
