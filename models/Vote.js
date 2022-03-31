@@ -41,4 +41,4 @@ Vote.init(
 
 
 
-module.exports = Comment;
+module.exports = Vote;
