@@ -29,7 +29,7 @@ Post.belongsToMany(User, {
 Post.hasMany(Vote, {
     foreignKey: "post_id"
 });
-Post.hasMany(Comemnt, {
+Post.hasMany(Comment, {
     foreignKey: "post_id"
 });
 

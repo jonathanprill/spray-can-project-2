@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS spray_can_db;
+CREATE DATABASE spray_can_db;
