@@ -1,5 +1,8 @@
 {{!-- This loads Homepage HTML --}}
-
-<h1>
-    ITS WORKING!
-</h1>
+<ol class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        {{> post-info post }}
+    </li>
+    {{/each}}
+</ol>
