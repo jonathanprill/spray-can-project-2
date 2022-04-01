@@ -13,11 +13,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
 //Cookies
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -33,6 +28,12 @@ const sess = {
 
 app.use(session(sess));
 //Cookies
+
+
+app.use(routes);
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
