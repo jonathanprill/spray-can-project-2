@@ -4,13 +4,14 @@ const { Post, User, Comment } = require('../models');
 
 //Gets all Posts
 router.get('/', (req, res) => {
+    console.log(req.session);
     Post.findAll({
         attributes: [
             'id',
             'description',
             'image',
             'location',
-            'created_at'
+            'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
@@ -63,7 +64,7 @@ router.get('/post/:id', (req, res) => {
             'description',
             'image',
             'location',
-            'created_at'
+            'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
             'vote_count']
         ],

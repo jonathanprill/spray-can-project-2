@@ -1,39 +1,43 @@
-{{!-- This is the origin HTML Document --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spray-Can</title>
-    {{!--
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> --}}
+    <title>Just Tech News</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="/">Spray-Can</a>
-        </h1>
-        <nav>
-            {{#if loggedIn}}
-            <a href="/dashboard">dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
-            {{else}}
-            <a href="/login">login</a>
-            {{/if}}
-        </nav>
-    </header>
-
-    <main>
-        {{{ body }}}
-    </main>
-    <footer>
-        Thanks for visiting!
-    </footer>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Just Tech News</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <a href="/login">login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Thanks for visiting!
+        </footer>
+    </div>
+    {{!-- link to logout.js file --}}
+    
 </body>
 
 </html>
+
+{{!------ NOTES ------}}
+
+{{!-- Your file/folder structure MUST be set up this way for Handlebars.js to work correctly.
+You will always have a main layout located at (and named) views/layouts/main.handlebars.
+All other template files will go directly in the views folder (views/welcome.handlebars). --}}
