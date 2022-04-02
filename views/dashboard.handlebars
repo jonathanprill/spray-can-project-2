@@ -1,2 +1,40 @@
 {{!-- This loads Dashboard HTML --}}
-<h1>Dashboard Will Load Here</h1>
+<section>
+    <h2>Create New Post</h2>
+
+    <form class="new-post-form">
+        {{!-- DESC --}}
+        <div>
+            <label for="post-desc">Post Desc</label>
+            <input type="text" id="post-desc" name="post-desc" />
+        </div>
+        {{!-- IMAGE --}}
+        <div>
+            <label for="post-image">image</label>
+            <input id="post-image" name="post-image" />
+        </div>
+        {{!-- LOCATION --}}
+        <div>
+            <label for="post-location">Location</label>
+            <input id="post-location" name="post-location" />
+        </div>
+        <button type="submit" class="btn">Create Post</button>
+    </form>
+</section>
+
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+
+{{!-- The file that the dashboard uses to create new posts --}}
+<script src="/javascript/add-post.js"></script>
