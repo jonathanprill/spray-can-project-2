@@ -2,6 +2,8 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Vote, Comment } = require('../../models');
 
+
+
 //Gets all Posts
 router.get('/', (req, res) => {
     Post.findAll({
@@ -79,6 +81,7 @@ router.get('/:id', (req, res) => {
 
 
 //Creates a single post
+///    /api/posts/
 router.post('/', (req, res) => {
     Post.create({
         description: req.body.description,

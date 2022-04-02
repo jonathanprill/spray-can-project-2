@@ -2,38 +2,28 @@
 <section>
     <h2>Create New Post</h2>
 
-    <form class="new-post-form">
-        {{!-- DESC --}}
+    <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+        <div>
+            <label>Upload profile picture</label>
+            <input type="file" name="post-image" required />
+        </div>
+        <div>
+            <input type="submit" value="Upload" />
+        </div>
         <div>
             <label for="post-desc">Post Desc</label>
             <input type="text" id="post-desc" name="post-desc" />
         </div>
-        {{!-- IMAGE --}}
-        <div>
-            <label for="post-image">image</label>
-            <input id="post-image" name="post-image" />
-        </div>
+
         {{!-- LOCATION --}}
         <div>
             <label for="post-location">Location</label>
             <input id="post-location" name="post-location" />
         </div>
-        <button type="submit" class="btn">Create Post</button>
     </form>
 </section>
 
 
-{{!-- MULTER --}}
-<form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
-    <div>
-        <label>Upload profile picture</label>
-        <input type="file" name="profile-file" required />
-    </div>
-    <div>
-        <input type="submit" value="Upload" />
-    </div>
-</form>
-{{!-- MULTER --}}
 
 
 {{#if posts.length}}
@@ -53,4 +43,3 @@
 
 
 {{!-- The file that the dashboard uses to create new posts --}}
-<script src="/javascript/add-post.js"></script>
