@@ -13,6 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/uploads', express.static('uploads'));
+
 //Cookies
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -30,7 +32,8 @@ app.use(session(sess));
 
 
 // MULTER
-const multer  = require('multer');
+// SOURCE https://www.gyaanibuddy.com/blog/how-to-upload-image-using-multer-in-nodejs/
+const multer = require('multer');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads')
@@ -49,27 +52,19 @@ And make them accessible through http://localhost:3000/a.
 
 app.use('/uploads', express.static('uploads'));
 
-app.post('/profile-upload-single', upload.single('profile-file'), function (req, res, next) {
-// req.file is the `profile-file` file
-// req.body will hold the text fields, if there were any
-console.log(JSON.stringify(req.file))
-var response = '<a href="/">Home</a><br>'
-response += "Files uploaded successfully.<br>"
-response += `<img src="${req.file.path}" /><br>`
-return res.send(response)
+app.post('/profile-upload-single', upload.single('post-image'), function (req, res, next) {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  // console.log(JSON.stringify(req.file))
+  // var response = '<a href="/">Home</a><br>'
+  // response += "Files uploaded successfully.<br>"
+  // response += `<img src="${req.file.path}" /><br>`
+  // return res.send(response)
+
+  console.log(req.file, req.body)
+
 })
 
-app.post('/profile-upload-multiple', upload.array('profile-files', 12), function (req, res, next) {
-  // req.files is array of `profile-files` files
-  // req.body will contain the text fields, if there were any
-  var response = '<a href="/">Home</a><br>'
-  response += "Files uploaded successfully.<br>"
-  for(var i=0;i<req.files.length;i++){
-      response += `<img src="${req.files[i].path}" /><br>`
-  }
-  
-  return res.send(response)
-})
 // MULTER
 
 
