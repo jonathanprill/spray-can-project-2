@@ -54,6 +54,7 @@ const uploadFiles = async (req, res) => {
       return res.send(`You must select a file.`);
     }
     Post.create({
+      user_id: req.session.user_id,
       description: req.body.description,
       location: req.body.location,
       name: req.file.originalname,
