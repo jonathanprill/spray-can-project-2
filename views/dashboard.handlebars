@@ -1,26 +1,32 @@
 {{!-- This loads Dashboard HTML --}}
 <section>
-    <h2>Create New Post</h2>
+    <div class="container">
+        <div class="columns is-12">
+            <div class="column is-4">
+                <h2 class="title">Create New Post</h2>
 
-    <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
-        <div>
-            <label>Upload profile picture</label>
-            <input type="file" name="post-image" required />
-        </div>
-        <div>
-            <input type="submit" value="Upload" />
-        </div>
-        <div>
-            <label for="post-desc">Post Desc</label>
-            <input type="text" id="post-desc" name="post-desc" />
-        </div>
+                <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+                    <div class="field">
+                        <label class="label">Upload Picture</label>
+                        <input class="input" type="file" name="post-image" required />
+                    </div>
+                    <div class="field">
+                        <label class="label" for="post-desc">Description</label>
+                        <textarea class="textarea" type="text" id="post-desc" name="post-desc"></textarea>
+                    </div>
 
-        {{!-- LOCATION --}}
-        <div>
-            <label for="post-location">Location</label>
-            <input id="post-location" name="post-location" />
+                    {{!-- LOCATION --}}
+                    <div class="field">
+                        <label class="label" for="post-location">Location</label>
+                        <input class="input" id="post-location" name="post-location" placeholder="E.g. 30.2639, -97.7260"/>
+                    </div>
+                    <div class="field">
+                        <button class="button is-link" type="submit" value="Upload" />Upload</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
+    </div>            
 </section>
 
 
