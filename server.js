@@ -32,38 +32,59 @@ app.use(session(sess));
 
 
 // MULTER
-// SOURCE https://www.gyaanibuddy.com/blog/how-to-upload-image-using-multer-in-nodejs/
-const multer = require('multer');
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './uploads')
+const { Post } = require('./models');
+const multer = require("multer");
+const fs = require("fs");
+__basedir = path.resolve(path.dirname(''));
+const fileStorageEngine = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, __basedir + "/uploads/")
   },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname)
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '--' + file.originalname);
+  },
+})
+
+const upload = multer({ storage: fileStorageEngine });
+
+const uploadFiles = async (req, res) => {
+  try {
+    console.log(req.file, req.body);
+    if (req.file == undefined) {
+      return res.send(`You must select a file.`);
+    }
+    Post.create({
+      description: req.body.description,
+      location: req.body.location,
+      name: req.file.originalname,
+      data: fs.readFileSync(
+        __basedir + "/uploads/" + req.file.filename
+      ),
+    }).then((image) => {
+      fs.writeFileSync(
+        __basedir + "/uploads/" + image.name,
+        image.data
+      );
+      //return res.send(`File has been uploaded.`);
+    });
+  } catch (error) {
+    console.log(error);
+    return res.send(`Error when trying upload images: ${error}`);
   }
+};
+
+
+
+app.post('/api/posts', upload.single('file'), (req, res) => {
+  uploadFiles(req, res);
+  console.log(req.file);
+  res.send('Success!');
+  // uploadFiles();
 })
-var upload = multer({ storage: storage })
 
-/*
-app.use('/a',express.static('/b'));
-Above line would serve all files/folders inside of the 'b' directory
-And make them accessible through http://localhost:3000/a.
-*/
 
-app.use('/uploads', express.static('uploads'));
 
-app.post('/profile-upload-single', upload.single('post-image'), function (req, res, next) {
-  // req.file is the `profile-file` file
-  // req.body will hold the text fields, if there were any
-  // console.log(JSON.stringify(req.file))
-  // var response = '<a href="/">Home</a><br>'
-  // response += "Files uploaded successfully.<br>"
-  // response += `<img src="${req.file.path}" /><br>`
-  // return res.send(response)
 
-  console.log(req.file, req.body)
-
-})
 
 // MULTER
 
