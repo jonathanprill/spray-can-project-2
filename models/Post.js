@@ -16,7 +16,6 @@ class Post extends Model {
                 attributes: [
                     'id',
                     'description',
-                    'image',
                     'location',
                     'created_at',
                     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -38,13 +37,15 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        image: {
+        name: {
             type: DataTypes.STRING,
-            allowNull: false,
+        },
+        data: {
+            type: DataTypes.BLOB("long"),
         },
         location: {
             type: DataTypes.STRING,
-            allowNull: false
+
         },
         user_id: {
             type: DataTypes.INTEGER,

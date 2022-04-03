@@ -5,28 +5,31 @@
             <div class="column is-4">
                 <h2 class="title">Create New Post</h2>
 
-                <form method="POST" action="/profile-upload-single" enctype="multipart/form-data">
+                <form class="mt-4" action="/api/posts" method="POST" enctype="multipart/form-data">
+
                     <div class="field">
                         <label class="label">Upload Picture</label>
-                        <input class="input" type="file" name="post-image" required />
-                    </div>
-                    <div class="field">
-                        <label class="label" for="post-desc">Description</label>
-                        <textarea class="textarea" type="text" id="post-desc" name="post-desc"></textarea>
+                        <input type="file" name="file" id="input-files" class="input" />
                     </div>
 
+                    <div class="field">
+                        <label class="label" for="post-desc">Description</label>
+                        <textarea class="textarea" type="text" id="description" name="description"></textarea>
+                    </div>
                     {{!-- LOCATION --}}
                     <div class="field">
-                        <label class="label" for="post-location">Location</label>
-                        <input class="input" id="post-location" name="post-location" placeholder="E.g. 30.2639, -97.7260"/>
+                        <label class="label" for="location">Location</label>
+                        <input class="input" id="location" name="location"
+                            placeholder="E.g. 30.2639, -97.7260" />
                     </div>
+
                     <div class="field">
                         <button class="button is-link" type="submit" value="Upload" />Upload</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>            
+    </div>
 </section>
 
 
