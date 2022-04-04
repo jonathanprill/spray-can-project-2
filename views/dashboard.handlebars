@@ -19,8 +19,7 @@
                     {{!-- LOCATION --}}
                     <div class="field">
                         <label class="label" for="location">Location</label>
-                        <input class="input" id="location" name="location"
-                            placeholder="E.g. 30.2639, -97.7260" />
+                        <input class="input" id="location" name="location" placeholder="E.g. 30.2639, -97.7260" />
                     </div>
 
                     <div class="field">
@@ -43,16 +42,17 @@
         <li>
             {{> post-info post}} --}}
             {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
-        {{!-- </li>
+            {{!-- </li>
         {{/each}}
     </ol>
 </section>
 {{/if}} --}}
 
 
+<div id="map" class="map"></div>
 
 
-{{!-- The file that the dashboard uses to create new posts --}}
+{{!--The file that the dashboard uses to create new posts--}}
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="/javascript/add-post.js"></script>
-
+<script type="module" src="/javascript/add-post.js"></script>
