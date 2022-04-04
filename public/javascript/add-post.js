@@ -25,13 +25,14 @@ function onMapClick(e) {
     if (result.features.length) {
       const address = result.features[0].properties.formatted;
       L.popup().setLatLng(e.latlng).setContent(address).openOn(map);
-      
+      document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
+      console.log(e.latlng)
     } else {
       L.popup().setLatLng(e.latlng).setContent("No address found").openOn(map);
       
     }
   });
-  console.log(e.latlng)
+  //console.log(e.latlng)
 }
 
 map.on('click', onMapClick);

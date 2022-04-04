@@ -32,24 +32,25 @@
     </div>
 </section>
 
+<div id="my-map"></div>
 
 
-
-{{#if posts.length}}
+{{!-- {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
     <ol>
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
+            {{> post-info post}} --}}
             {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
-        </li>
+        {{!-- </li>
         {{/each}}
     </ol>
 </section>
-{{/if}}
+{{/if}} --}}
 
-<div id="my-map"></div>
+
+
 
 {{!-- The file that the dashboard uses to create new posts --}}
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
