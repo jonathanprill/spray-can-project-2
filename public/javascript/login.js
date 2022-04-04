@@ -22,7 +22,8 @@ async function signupFormHandler(event) {
 
         // check the response status
         if (response.ok) {
-            console.log('success');
+            document.location.replace('/')
+            window.alert('You have successfully created an account!');
         } else {
             alert(response.statusText);
         }

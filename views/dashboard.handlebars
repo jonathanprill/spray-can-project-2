@@ -1,8 +1,7 @@
 {{!-- This loads Dashboard HTML --}}
-<section>
-    <div class="container">
+
         <div class="columns is-12">
-            <div class="column is-4">
+            <div class="column is-6">
                 <h2 class="title">Create New Post</h2>
 
                 <form class="mt-4" action="/api/posts" method="POST" enctype="multipart/form-data">
@@ -26,13 +25,12 @@
                     <div class="field">
                         <button class="button is-link" type="submit" value="Upload" />Upload</button>
                     </div>
+                <div class="field" id="my-map"></div>
                 </form>
             </div>
         </div>
-    </div>
-</section>
 
-<div id="my-map"></div>
+
 
 
 {{!-- {{#if posts.length}}
