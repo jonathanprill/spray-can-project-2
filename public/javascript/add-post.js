@@ -40,8 +40,3 @@ map.on('click', onMapClick);
 
 
 
-//////////////////ADDS PINS/////////////////////
-L.marker([30.268606149999997,
-  -97.74320738193495]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
