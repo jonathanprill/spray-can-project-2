@@ -33,4 +33,8 @@ var coords = [[30.268606149999997, -97.74320738193495], [30.262403300410476, -97
 coords.forEach((el) => {
     L.marker({lat:el[0], lng: el[1]}).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     
-})
+});
+
+// db.query('SELECT * FROM posts', function (err, results) {
+//     console.table(results);
+//   });
