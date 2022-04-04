@@ -52,6 +52,17 @@
 
 <div id="map" class="map"></div>
 
+ <script>
+        const findLoc = document.querySelector("#find-my-loc");
+        const locationInput = document.querySelector("#location")
+        findLoc.addEventListener('click', () => {
+            navigator.geolocation.getCurrentPosition(data => {
+                console.log(data.coords.latitude,data.coords.longitude);
+                var data = data.coords.latitude + ',' + data.coords.longitude 
+                $("#location").val(data)
+            })
+        })
+</script>
 
 {{!--The file that the dashboard uses to create new posts--}}
 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>

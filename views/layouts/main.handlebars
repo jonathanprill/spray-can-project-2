@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body style="height: 100%;">
@@ -90,17 +91,6 @@
     {{!-- <footer style="bottom: 0">
 
     </footer> --}}
-    <script>
-        const findLoc = document.querySelector("#find-my-loc");
-        const locationInput = document.querySelector("#location")
-        findLoc.addEventListener('click', () => {
-            navigator.geolocation.getCurrentPosition(data => {
-                console.log(data.coords.latitude,data.coords.longitude);
-                var data = data.coords.latitude + ',' + data.coords.longitude 
-                $("#location").val(data)
-            })
-        })
-    </script>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
