@@ -1,9 +1,47 @@
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 <div id="my-map"></div>
 
 
+<script>
+    const map = L.map('my-map').setView([
+        30.268606149999997,
+        -97.74320738193495], 13);
+
+    // Retina displays require different mat tiles quality
+    const isRetina = L.Browser.retina;
+
+    const baseUrl = "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey={apiKey}";
+    const retinaUrl = "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}@2x.png?apiKey={apiKey}";
+
+    // Add map tiles layer. Set 20 as the maximal zoom and provide map data attribution.
+    L.tileLayer(isRetina ? retinaUrl : baseUrl, {
+        attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a>',
+        apiKey: '78a2da46af4b455abc0c8999786a21aa',
+        maxZoom: 20,
+        id: 'osm-bright',
+    }).addTo(map);
+
+    var pinArr = [];
+</script>
 
 
 
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script type="module" src="/javascript/editmap.js"></script>
+
+{{#each posts}}
+
+<script>
+    L.marker([{{ location }}]).addTo(map)
+        .bindPopup('<img src="/uploads/{{name}}" alt="Placeholder image">')
+</script>
+{{/each}}
+
+
+
+
+
+{{!--
+<script type="module" src="/javascript/editmap.js"></script> --}}
+
+{{!-- {{pin_on_map location}} --}}

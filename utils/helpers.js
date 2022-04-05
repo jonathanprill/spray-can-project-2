@@ -19,4 +19,12 @@ module.exports = {
             .split('/')[0]
             .split('?')[0];
     },
+    create_an_array: (location) => {
+        
+        var pinArr = [];
+        pinArr.push(location);
+        console.log(pinArr);
+        return pinArr;
+        
+    }
 }
