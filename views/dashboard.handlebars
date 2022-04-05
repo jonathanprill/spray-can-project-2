@@ -1,8 +1,6 @@
 {{!-- This loads Dashboard HTML --}}
-<section>
-    <div class="container">
-        <div class="columns is-12">
-            <div class="column is-4">
+
+            <div class="column is-8 is-offset-2">
                 <h2 class="title">Create New Post</h2>
 
                 <form class="mt-4" action="/api/posts" method="POST" enctype="multipart/form-data">
@@ -26,13 +24,11 @@
                     <div class="field">
                         <button class="button is-link" type="submit" value="Upload" />Upload</button>
                     </div>
+                    <div class="field post-map" id="my-map"></div>
                 </form>
             </div>
-        </div>
-    </div>
-</section>
 
-<div id="my-map"></div>
+
 
 
 {{!-- {{#if posts.length}}
@@ -50,7 +46,7 @@
 {{/if}} --}}
 
 
-<div id="map" class="map"></div>
+{{!-- <div id="map" class="map"></div> --}}
 
  <script>
         const findLoc = document.querySelector("#find-my-loc");
