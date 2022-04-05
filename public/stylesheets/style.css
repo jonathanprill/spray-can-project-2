@@ -42,3 +42,38 @@
   align-content: center;
   justify-content: center;
 }
+
+/* Flag Icon SVG */
+
+.flag-icon {
+  padding-left: 90%;
+}
+
+.flag-icon path{
+  fill: transparent;
+  stroke-width: 0.75;
+  stroke: red;
+  stroke-dasharray: 70;
+  stroke-dashoffset: 0;
+}
+
+.flag-icon:active path {
+  animation: animate-flag 1s linear forwards;
+}
+
+@keyframes animate-flag {
+  0% {
+      stroke-dashoffset: 0;
+  }
+  40% {
+      stroke-dashoffset: 70;
+  }
+  80% {
+      stroke-dashoffset: 140;
+      fill: transparent;
+  }
+  100% {
+      stroke-dashoffset: 140;
+      fill: red;
+  }
+}
