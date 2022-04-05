@@ -1,4 +1,4 @@
-// Coorisponding code in login.handlebars file
+// Corresponding code in login.handlebars file
 
 
 //Sign Up
@@ -50,7 +50,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
