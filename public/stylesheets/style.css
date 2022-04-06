@@ -49,7 +49,7 @@
   padding-left: 90%;
 }
 
-.flag-icon path{
+.flag-icon path {
   fill: transparent;
   stroke-width: 0.75;
   stroke: red;
@@ -63,17 +63,27 @@
 
 @keyframes animate-flag {
   0% {
-      stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
+
   40% {
-      stroke-dashoffset: 70;
+    stroke-dashoffset: 70;
   }
+
   80% {
-      stroke-dashoffset: 140;
-      fill: transparent;
+    stroke-dashoffset: 140;
+    fill: transparent;
   }
+
   100% {
-      stroke-dashoffset: 140;
-      fill: red;
+    stroke-dashoffset: 140;
+    fill: red;
   }
+}
+
+
+.headtext {
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 25px;
+  padding-top: 15px;
 }
