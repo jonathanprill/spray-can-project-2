@@ -21,19 +21,19 @@ L.tileLayer(isRetina ? retinaUrl : baseUrl, {
 
 
 
-//////////////////ADDS PINS/////////////////////
-var coords = [[30.268606149999997, -97.74320738193495], [30.262403300410476, -97.74081230163576]]
+// //////////////////ADDS PINS/////////////////////
+// var coords = [[30.268606149999997, -97.74320738193495], [30.262403300410476, -97.74081230163576]]
 
-//SOURCE:  https://leafletjs.com/SlavaUkraini/
-// L.marker([30.268606149999997, -97.74320738193495]).addTo(map)
-//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-//     .openPopup();
+// //SOURCE:  https://leafletjs.com/SlavaUkraini/
+// // L.marker([30.268606149999997, -97.74320738193495]).addTo(map)
+// //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+// //     .openPopup();
 
 
-coords.forEach((el) => {
-    L.marker({lat:el[0], lng: el[1]}).addTo(map).bindPopup('<img src="/uploads/streetart4.jpg" alt="Placeholder image">')
+// coords.forEach((el) => {
+//     L.marker({lat:el[0], lng: el[1]}).addTo(map).bindPopup('<img src="/uploads/streetart4.jpg" alt="Placeholder image">')
     
-});
+// });
 
 // db.query('SELECT * FROM posts', function (err, results) {
 //     console.table(results);
