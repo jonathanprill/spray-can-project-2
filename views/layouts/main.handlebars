@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spray-Can</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -17,11 +19,15 @@
     <header>
         <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
             {{#if loggedIn}}
+                    
+                    
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        <span class="icon is-medium is-left">
+                     
+                    <a class="navbar-item headtext" href="/">
+                        {{!-- <span class="icon is-medium">
                             <i class="fas fa-spray-can"></i>
-                        </span>
+                        </span> --}}
+                        SPRAY CAN
                     </a>
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                             <span aria-hidden="true"></span>
@@ -31,9 +37,9 @@
                 </div>
                 <div id="navMenu" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item" href="/">
+                        {{!-- <a class="navbar-item" href="/">
                             Home
-                        </a>
+                        </a> --}}
 
                         <a class="navbar-item" href="/dashboard">
                             Post
@@ -55,12 +61,14 @@
                 </div>
                 {{else}}
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        <span class="icon is-medium is-left">
+                     
+                    <a class="navbar-item headtext" href="/">
+                        {{!-- <span class="icon is-medium">
                             <i class="fas fa-spray-can"></i>
-                        </span>
+                        </span> --}}
+                        SPRAY CAN
                     </a>
-                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -69,9 +77,9 @@
 
                 <div id="navMenu" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item" href="/">
+                        {{!-- <a class="navbar-item" href="/">
                             Home
-                        </a>
+                        </a> --}}
                     </div>
                     <div class="navbar-end">
                         <div class="navbar-item">

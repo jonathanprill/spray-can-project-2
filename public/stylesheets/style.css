@@ -42,3 +42,36 @@
   align-content: center;
   justify-content: center;
 }
+
+.headtext {
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 23px;
+  padding-top: 15px;
+}
+
+.headtext:hover {
+  background-color: unset !important;
+}
+
+.headtext:before {
+  content: '';
+  position: absolute;
+  left: 120%;
+  width: 120%;
+  height: 80%;
+  background: linear-gradient(90deg, transparent 0%, #00d1b2 5%, #00d1b2 100%);
+  animation: testAnimate 2.5s cubic-bezier(0.9, 0, 1, 0.74)  forwards;
+
+}
+
+@keyframes testAnimate {
+  0% {
+      left: -1%;
+  }
+  50% {
+      left: 110%;
+  }
+  100% {
+      left: 110%;
+  }
+}
