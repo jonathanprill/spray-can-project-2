@@ -1,7 +1,7 @@
 <h1 align="center">Spray Can</h1>
 
 <p align="center">
-    <a target="_blank" href="google.com">Link To Deployed Website</a>
+    <a target="_blank" href="https://enigmatic-cliffs-72783.herokuapp.com/">Link To Deployed Website</a>
 </p>
 
 <br />
