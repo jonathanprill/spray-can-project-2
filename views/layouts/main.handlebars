@@ -15,7 +15,6 @@
     <script src="https://kit.fontawesome.com/1e8a253695.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body style="height: 100%;">
 
     <header>
@@ -114,10 +113,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            {{/if}}
+                {{/if}}
         </nav>
     </header>
     <br>
@@ -125,10 +123,10 @@
     <main>
         <section class="section">
             <div class="container">
-
+                
                 {{{ body }}}
-
-            </div>
+                
+            </div>    
         </section>
     </main>
     {{!-- <footer style="bottom: 0">
@@ -137,32 +135,32 @@
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-    <script>
+    <script>  
         document.addEventListener('DOMContentLoaded', () => {
 
-            // Get all "navbar-burger" elements
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-            // Check if there are any navbar burgers
-            if ($navbarBurgers.length > 0) {
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
 
-                // Add a click event on each of them
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
 
-                        // Get the target from the "data-target" attribute
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
 
-                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
 
-                    });
-                });
-            }
+      });
+    });
+  }
 
-        });
+});
     </script>
 </body>
 
