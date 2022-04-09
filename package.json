@@ -27,6 +27,7 @@
     "express-session": "^1.17.2",
     "leaflet": "^1.7.1",
     "multer": "^1.4.4",
+    "multer-storage-imgur": "^1.0.4",
     "mysql2": "^2.3.3",
     "ol-marker-feature": "^2.0.2",
     "ol-popup": "^4.0.0",
