@@ -1,8 +1,7 @@
 {{!-- This loads Homepage HTML --}}
-<ol class="post-list">
+<p class="title is-centered is-strong">GALLERY</p>
+<div class="columns is-flex is-flex-wrap-wrap">
     {{#each posts as |post|}}
-    <li>
         {{> post-info post }}
-    </li>
     {{/each}}
-</ol>
+</div>

@@ -79,10 +79,8 @@ const uploadFiles = async (req, res) => {
 app.post('/api/posts', upload.single('file'), (req, res) => {
   uploadFiles(req, res);
   console.log(req.file);
-  res.send('Success!');
-  // uploadFiles();
+  res.redirect('/');
 })
-
 
 
 
@@ -99,3 +97,4 @@ app.set('view engine', 'handlebars');
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
