@@ -13,7 +13,7 @@ Vote.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
             references: {
                 model: "user",
                 key: "id"
@@ -28,17 +28,20 @@ Vote.init(
             }
         },
         flag: {
-            type: DataTypes.BOOLEAN,   
-        },
+            type: DataTypes.BOOLEAN,
+        }
+    },
 
-
+    {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: "vote"
     }
+
 )
 
 
 
-module.exports = Comment;
+module.exports = Vote;

@@ -1,0 +1,66 @@
+{{!-- This loads Dashboard HTML --}}
+ <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <h2 class="title">Create New Post</h2>
+
+                <form class="mt-4" action="/api/posts" method="POST" enctype="multipart/form-data">
+
+                    <div class="field">
+                        <label class="label">Upload Picture</label>
+                        <input type="file" name="file" id="input-files" class="input" />
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="post-desc">Description</label>
+                        <textarea class="textarea" type="text" id="description" name="description"></textarea>
+                    </div>
+                    {{!-- LOCATION --}}
+                    <div class="field">
+                        <label class="label" for="location">Location</label>
+                        <input class="input" id="location" name="location" placeholder="E.g. 30.2639, -97.7260" />
+                        <button type="button" id="find-my-loc">Use Current Location</button>
+                    </div>
+
+                    <div class="field">
+                        <button class="button is-link" type="submit" value="Upload" />Upload</button>
+                    </div>
+                    <div class="field post-map" id="my-map"></div>
+                </form>
+            </div>
+</div>
+
+
+
+{{!-- {{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}} --}}
+            {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
+            {{!-- </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}} --}}
+
+
+{{!-- <div id="map" class="map"></div> --}}
+
+ <script>
+        const findLoc = document.querySelector("#find-my-loc");
+        const locationInput = document.querySelector("#location")
+        findLoc.addEventListener('click', () => {
+            navigator.geolocation.getCurrentPosition(data => {
+                console.log(data.coords.latitude,data.coords.longitude);
+                var data = data.coords.latitude + ',' + data.coords.longitude 
+                $("#location").val(data)
+            })
+        })
+</script>
+
+{{!--The file that the dashboard uses to create new posts--}}
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script type="module" src="/javascript/add-post.js"></script>
