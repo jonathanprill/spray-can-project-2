@@ -44,9 +44,15 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, Date.now() + '--' + file.originalname);
   },
 })
+///////////////////////////////
+// const upload = multer({ storage: fileStorageEngine });
 
-const upload = multer({ storage: fileStorageEngine });
+const ImgurStorage = require('multer-storage-imgur');
 
+const upload = multer({
+  storage: ImgurStorage({ clientId: '12ab85947b0bfea' })
+})
+//////////////////////////////////
 const uploadFiles = async (req, res) => {
   try {
     console.log(req.file, req.body);
@@ -57,17 +63,9 @@ const uploadFiles = async (req, res) => {
       user_id: req.session.user_id,
       description: req.body.description,
       location: req.body.location,
-      name: req.file.originalname,
-      data: fs.readFileSync(
-        __basedir + "/uploads/" + req.file.filename
-      ),
-    }).then((image) => {
-      fs.writeFileSync(
-        __basedir + "/uploads/" + image.name,
-        image.data
-      );
-      //return res.send(`File has been uploaded.`);
-    });
+      name: req.file.link
+      
+    })
   } catch (error) {
     console.log(error);
     return res.send(`Error when trying upload images: ${error}`);
