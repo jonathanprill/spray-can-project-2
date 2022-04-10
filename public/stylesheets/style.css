@@ -116,4 +116,10 @@
 
 .About-header{
   font-family: 'Sedgwick Ave Display', cursive;
+  animation: rotate-hue 2s alternate infinite;
+ }
+ 
+ @keyframes rotate-hue {
+     100%{
+         filter: hue-rotate(360deg);
   }
