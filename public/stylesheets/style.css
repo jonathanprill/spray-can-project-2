@@ -113,3 +113,15 @@
   margin-bottom: 50px;
   margin-left: 1.5rem;
 }
+
+.About-header {
+  font-family: 'Sedgwick Ave Display', cursive;
+  animation: rotate-hue 2s alternate infinite;
+ }
+ 
+ @keyframes rotate-hue {
+     100%{
+         filter: hue-rotate(360deg);
+     }
+  }
+
