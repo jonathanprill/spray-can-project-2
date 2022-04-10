@@ -1,0 +1,9 @@
+{{#if posts.length}}
+    <p class="title is-centered is-strong">My Posts</p>
+    <div class="columns"></div>
+        {{#each posts as |post|}}
+            {{> post-info post}}
+            <a href="/myposts/edit/{{post.id}}" class="button is-danger editbutton">Delete post</a>
+        {{/each}}
+    </div>
+{{/if}}
