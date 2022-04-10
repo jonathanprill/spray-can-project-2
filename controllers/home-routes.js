@@ -30,6 +30,7 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
+            dbPostData.sort((a, b) => parseFloat(b.id) - parseFloat(a.id))
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('homepage', {
                 posts,
