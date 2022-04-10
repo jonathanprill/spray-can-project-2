@@ -13,5 +13,12 @@
 
 {{> About}}
 
+<br>
+<p class="title is-centered is-strong">GALLERY</p>
+<div class="columns is-flex is-flex-wrap-wrap">
+    {{#each posts as |post|}}
+        {{> post-info post }}
+    {{/each}}
+</div>
 
 {{/if}}
