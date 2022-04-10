@@ -26,7 +26,7 @@ function onMapClick(e) {
     .then(result => {
       if (result.features.length) {
         const address = result.features[0].properties.formatted;
-        L.popup().setLatLng(e.latlng).setContent(address).openOn(map);
+        L.popup().setLatLng(e.latlng).openOn(map);
         document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
         console.log(e.latlng)
       } else {
