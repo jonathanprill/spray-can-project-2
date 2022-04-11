@@ -47,7 +47,7 @@ If you want to run this app on your local machine you can clone or download the 
 
 ## Usage
 
-![ScreenShot](/assets/images/enigmatic-cliffs-iPhone%20SE.png "screenshot")
+![ScreenShot](/assets/images/screenshot-readme.png "screenshot")
 
 To get the best experience, go to the deployed site linked above. Make an account and create you first post. Spend a few minutes browsing around our map feature. Don't forget to collaborate!
 
